@@ -18,30 +18,35 @@ export const authStore = defineStore({
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/session/`;
         const response: Response = await axios.get(endpoint, { withCredentials: true }
         );
-        const isAuthenticated = response.data.isAuthenticated
-        if (isAuthenticated == false) {
-          router.push('/login');
-        } 
-        this.isAuthenticated = true;
+        const isAuthenticated = response.data.isAuthenticated;
+        if (isAuthenticated == true) {
+          router.push('/cockpit');
+          this.isAuthenticated = true;
+        } else {
+          router.push("/start");
+        }
     },
     // get CSRF Token from Backend and store it in cookie
     async getCSRFToken() {
       let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/csrf/`;
-      const response: Response = await axios.get(endpoint);
+      const response: Response = await axios.get(endpoint, {withCredentials: true});
     },
     // login using username and password
-    async login(username: String, password: String) {
+    async login(email: String, password: String) {
       try {
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/login/`;
         const response: Response = await axios.post(endpoint,
-          JSON.stringify({ username: username, password: password }), {
+          JSON.stringify({ email: email, password: password }), {
           withCredentials: true,
           headers: {
             "X-CSRFToken": cookies.get("csrftoken"),
             'content-type': 'application/json'
           }
         });
-        router.push('/');
+        if (response.status == 200) {
+          this.isAuthenticated = true;
+          router.push('/cockpit');
+        }
       } catch (e) {
         console.log(e);
       }
@@ -49,7 +54,8 @@ export const authStore = defineStore({
     async logout() {
       let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/logout/`;
       const response: Response = await axios.get(endpoint, {withCredentials: true});
-      router.push('/login');
+      this.isAuthenticated = false;
+      router.push('/');
     },
     async getWhoAmI() {
       let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/whoami/`;

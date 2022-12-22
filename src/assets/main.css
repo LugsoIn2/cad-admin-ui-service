@@ -7,12 +7,12 @@
   height: 100vh;
   margin: 0;
   padding: 0;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
   font-weight: normal;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  display:flex;
+  flex-direction: column;
 }
 
 a,
@@ -22,11 +22,6 @@ a,
   transition: 0.4s;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
 
 @media (min-width: 1024px) {
   body {
