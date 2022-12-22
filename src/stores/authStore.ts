@@ -32,7 +32,7 @@ export const authStore = defineStore({
       const response: Response = await axios.get(endpoint, {withCredentials: true});
     },
     // login using username and password
-    async login(email: String, password: String) {
+    async login(email: String, password: String): boolean {
       try {
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/login/`;
         const response: Response = await axios.post(endpoint,
@@ -46,10 +46,13 @@ export const authStore = defineStore({
         if (response.status == 200) {
           this.isAuthenticated = true;
           router.push('/cockpit');
+          return true;
         }
       } catch (e) {
         console.log(e);
       }
+      console.log("returngin ha");
+      return false;
     },
     async logout() {
       let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/logout/`;

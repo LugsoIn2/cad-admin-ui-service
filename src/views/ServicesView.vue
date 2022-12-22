@@ -1,38 +1,189 @@
 
 
 <template>
+  <section>
+    <div class="container px-6 py-8 mx-auto">
+      <div class="sm:flex sm:items-center justify-center">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-100">Simple, transparent pricing</h2>
+          <p class="mt-4 text-gray-500 dark:text-gray-400">No Contracts. No surorise fees.</p>
+        </div>
+      </div>
 
-<section class="container mx-auto px-6 p-10 h-full" >
-    <h2 class="text-4xl font-bold text-center text-white mb-8">
-      Features
-    </h2>
-    <div class="flex items-center flex-wrap mb-20">
-      <div class="w-full md:w-1/2">
-        <h4 class="text-3xl text-indigo-200 font-bold mb-3">Exercise Metric</h4>
-        <p class="text-indigo-200 mb-8">Our Smart Health Monitoring Wristwatch is able to capture you vitals while you exercise. You can create different category of exercises and can track your vitals on the go.</p>
-      </div>
-      <div class="w-full md:w-1/2">
-        <img src="https://www.cch.de/fileadmin/_processed_/1/b/csm_cch_header_concert3_f3ce086a56.jpg" />
-      </div>
-    </div>
+      <div class="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+        <div
+          class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 flex flex-col justify-between">
+          <div>
+            <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Free</p>
+            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$0 <span
+                class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
+            <p class="mt-4 text-gray-500 dark:text-gray-300">If you want to have a free version of our software</p>
 
-    <div class="flex items-center flex-wrap mb-20">
-      <div class="w-full md:w-1/2">
-        <img src="https://www.cch.de/fileadmin/_processed_/1/b/csm_cch_header_concert3_f3ce086a56.jpg" />
-      </div>
-      <div class="w-full md:w-1/2 pl-10">
-        <h4 class="text-3xl text-indigo-200 font-bold mb-3">Reporting</h4>
-        <p class="text-indigo-200 mb-8">Our Smart Health Monitoring Wristwatch can generate a comprehensive report on your vitals depending on your settings either daily, weekly, monthly, quarterly or yearly.</p>
-      </div>
-    </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
 
-    <div class="flex items-center flex-wrap mb-20">
-      <div class="w-full md:w-1/2">
-        <h4 class="text-3xl text-indigo-200 font-bold mb-3">Syncing</h4>
-        <p class="text-indigo-200 mb-8">Our Smart Health Monitoring Wristwatch allows you to sync data across all your mobile devices whether iOS, Android or Windows OS and also to your laptop whether MacOS, GNU/Linux or Windows OS.</p>
-      </div>
-      <div class="w-full md:w-1/2">
-        <img src="https://www.cch.de/fileadmin/_processed_/1/b/csm_cch_header_concert3_f3ce086a56.jpg" />
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Scraper runs once a day</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Get events today</span>
+              </div>
+            </div>
+          </div>
+          <a href="/register">
+            <button
+              class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+              Choose plan
+            </button>
+          </a>
+        </div>
+        <div
+          class="px-6 py-4 transition-colors duration-200 transform rounded-lg bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700 flex flex-col justify-between">
+          <div>
+            <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Standard (most popular)</p>
+            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$9 <span
+                class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
+            <p class="mt-4 text-gray-500 dark:text-gray-300">Get a better version for you and your mates</p>
+
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Scraper runs once every hour</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Customizable theming</span>
+              </div>
+            </div>
+          </div>
+          <a href="/register">
+
+            <button
+              class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+              Choose plan
+            </button>
+          </a>
+        </div>
+        <div
+          class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 flex flex-col justify-between">
+          <div>
+            <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Enterprise</p>
+            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$49 <span
+                class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
+            <p class="mt-4 text-gray-500 dark:text-gray-300">Bring the full potential of our software to your tenant</p>
+
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Scraper runs once every 10 minutes</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Customizable theming</span>
+              </div>
+            </div>
+            <div class="mt-8 space-y-8">
+              <div class="flex items-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-500" viewBox="0 0 20 20"
+                  fill="currentColor">
+                  <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Isolated services</span>
+              </div>
+            </div>
+
+          </div>
+          <a href="/register">
+
+            <button
+              class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+              Choose plan
+            </button>
+          </a>
+        </div>
+
+
       </div>
     </div>
   </section>

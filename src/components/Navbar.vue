@@ -50,7 +50,7 @@ export default defineComponent({
 
             </li>
             <li>
-              <router-link class="menuItem-active-link" :to="{ name: 'services' }">Services</router-link>
+              <router-link class="menuItem-active-link" :to="{ name: 'services' }">Service Plans</router-link>
 
             </li>
             <li v-if="!store.isAuthenticated">

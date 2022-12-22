@@ -61,6 +61,7 @@ import { defineComponent } from 'vue';
 import router from '@/router';
 import { authStore } from '@/stores/authStore';
 import EventList from '@/components/EventList.vue';
+import { useToast } from 'vue-toastification';
 export default defineComponent({
   name: 'LoginView',
   components: {
@@ -68,7 +69,8 @@ export default defineComponent({
   },
   setup() {
     const store = authStore();
-    return { store };
+    const toast = useToast();
+    return { store, toast };
   },
   data() {
     return {
@@ -84,9 +86,12 @@ export default defineComponent({
   },
   methods: {
     // Log in with the form's email/username and password
-    loginWithPassword(e: any) {
+    async loginWithPassword(e: any) {
       e.preventDefault();
-      this.store.login(this.email, this.password);
+      let isFailed = await this.store.login(this.email, this.password) == false
+      if (isFailed) {
+        this.toast.error("Wrong login credentials!");
+      }
     },
   },
 });
