@@ -4,7 +4,7 @@
     <div class="w-full max-w-md space-y-8">
       <div>
         <!--<img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company"> -->
-        <h1 class="text-center text-5xl font-bold tracking-tight text-white"> Was geht? </h1>
+        <h1 class="text-center text-5xl font-bold tracking-tight text-white">Let's get started.</h1>
         <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-indigo-200">Register an account</h2>
 
       </div>
