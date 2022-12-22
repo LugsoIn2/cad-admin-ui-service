@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { eventStore } from '@/stores/eventStore';
+import { authStore } from '@/stores/authStore';
 import EventCard from './EventCard.vue';
 
 export default defineComponent({
@@ -9,14 +9,14 @@ export default defineComponent({
     EventCard
 },
   setup() {
-    const store = eventStore();
+    const store = authStore();
     return { store };
   },
 });
 </script>
 
 <template>
-  <EventCard v-for="event in store.events" :event="event"/>
+  Moin
 </template>
 
 <style scoped>

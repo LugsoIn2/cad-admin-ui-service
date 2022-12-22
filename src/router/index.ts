@@ -1,4 +1,6 @@
-import EventsViewVue from '@/views/EventsView.vue'
+import HomeViewVue from '@/views/HomeView.vue'
+import LoginViewVue from '@/views/LoginView.vue'
+
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -6,10 +8,14 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'events',
-      component: EventsViewVue
+      name: 'home',
+      component: HomeViewVue
     },
-
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginViewVue
+    },
   ]
 })
 
