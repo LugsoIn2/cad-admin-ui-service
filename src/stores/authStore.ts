@@ -51,7 +51,6 @@ export const authStore = defineStore({
       } catch (e) {
         console.log(e);
       }
-      console.log("returngin ha");
       return false;
     },
     async logout() {
@@ -64,6 +63,29 @@ export const authStore = defineStore({
       let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/whoami/`;
       const response: Response = await axios.get(endpoint, {withCredentials: true});
       this.username = response.data.username;
+    },
+    async register(email: String, password: String): Promise<Object> {
+      try {
+        let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/register/`;
+        const response: Response = await axios.post(endpoint,
+          JSON.stringify({ username: email, password1: password, password2: password }), {
+          withCredentials: true,
+          headers: {
+            "X-CSRFToken": cookies.get("csrftoken"),
+            'content-type': 'application/json'
+          }
+        });
+        if (response.status == 200 && !response.data.error) {
+          this.isAuthenticated = true;
+          router.push('/cockpit');
+          return null;
+        } else {
+          return response.data.error;
+        }
+      } catch (e) {
+        console.log(e);
+        return null;
+      }
     },
   }
 });
