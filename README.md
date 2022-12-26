@@ -44,3 +44,17 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Github Push on main
+please don't forget increase the version number.
+```sh
+npm version patch -m "v%s"
+```
+Only then the github release action are successfull.
+
+## Terraform using
+One for all after refactor:
+
+[Terraform Repo](https://github.com/LugsoIn2/cad-terraform-all.git)
+
+ 
