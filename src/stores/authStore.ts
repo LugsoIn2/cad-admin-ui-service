@@ -16,7 +16,7 @@ export const authStore = defineStore({
     // check if already authenticated by session
     async checkIsAuthenticated() {
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/session/`;
-        const response: Response = await axios.get(endpoint, { withCredentials: true }
+        const response: any = await axios.get(endpoint, { withCredentials: true }
         );
         const isAuthenticated = response.data.isAuthenticated;
         if (isAuthenticated == true) {
@@ -32,7 +32,7 @@ export const authStore = defineStore({
       const response: Response = await axios.get(endpoint, {withCredentials: true});
     },
     // login using username and password
-    async login(email: String, password: String): boolean {
+    async login(email: String, password: String): Promise<boolean> {
       try {
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/login/`;
         const response: Response = await axios.post(endpoint,
@@ -61,13 +61,13 @@ export const authStore = defineStore({
     },
     async getWhoAmI() {
       let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/whoami/`;
-      const response: Response = await axios.get(endpoint, {withCredentials: true});
+      const response: any = await axios.get(endpoint, {withCredentials: true});
       this.username = response.data.username;
     },
     async register(email: String, password: String): Promise<Object> {
       try {
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/register/`;
-        const response: Response = await axios.post(endpoint,
+        const response: any = await axios.post(endpoint,
           JSON.stringify({ username: email, password1: password, password2: password }), {
           withCredentials: true,
           headers: {
@@ -78,13 +78,13 @@ export const authStore = defineStore({
         if (response.status == 200 && !response.data.error) {
           this.isAuthenticated = true;
           router.push('/cockpit');
-          return null;
+          return {};
         } else {
           return response.data.error;
         }
       } catch (e) {
         console.log(e);
-        return null;
+        return {};
       }
     },
   }

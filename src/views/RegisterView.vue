@@ -93,11 +93,11 @@ export default defineComponent({
     // Log in with the form's email/username and password
     async register(e: any) {
       e.preventDefault();
-      let error = await this.store.register(this.email, this.password);
+      let error: any = await this.store.register(this.email, this.password);
       let that = this;
       if (error != null) {
         Object.keys(error).forEach(function (key) {
-          error[key].forEach((errorString) => {
+          error[key].forEach((errorString: string) => {
             that.toast.error(errorString);
           });
         });
