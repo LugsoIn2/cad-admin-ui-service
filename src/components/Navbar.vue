@@ -47,7 +47,7 @@ export default defineComponent({
             <li>
               <router-link class="font-bold menuItem-active-link" :to="{ name: 'start' }">Home</router-link>
             </li>
-            <li class="border-l border-r px-4">
+            <li class="border-l border-r border-gray-600 px-4">
               <router-link class="font-bold menuItem-active-link" :to="{ name: 'services' }">Service Plans</router-link>
             </li>
             <li v-if="!store.isAuthenticated" >
