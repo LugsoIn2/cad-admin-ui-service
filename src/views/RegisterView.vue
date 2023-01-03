@@ -10,13 +10,18 @@
       </div>
 
       <form class="mt-8 space-y-6" v-on:submit="register">
-
         <div class="-space-y-px rounded-md shadow-sm">
           <div class="pb-4">
             <label for="email-address" class="sr-only">Email address</label>
-            <input v-model="email" id="email-address" name="email" _type="email" autocomplete="email" required
+            <input v-model="email" id="email-address" name="email" type="email" autocomplete="email" required
               class="relative block w-full appearance-none bg-indigo-100 rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
               placeholder="Email address">
+          </div>
+          <div class="pb-4">
+            <label for="city" class="sr-only">City</label>
+            <input v-model="city" id="city" name="email" autocomplete="email" required
+              class="relative block w-full appearance-none bg-indigo-100 rounded border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+              placeholder="Name of your city">
           </div>
           <div class="pb-4">
             <label for="password" class="sr-only">Password</label>
@@ -35,8 +40,6 @@
         </div>
 
         <div class="flex items-center justify-between">
-
-
           <div class="text-sm">
             <a href="#" class="font-medium text-indigo-200 hover:text-indigo-500">Forgot your password?</a>
           </div>
@@ -80,20 +83,19 @@ export default defineComponent({
   data() {
     return {
       email: "",
+      city: "",
       password: "",
       alert: "",
     };
   },
   mounted() {
     this.store.getCSRFToken();
-    // check if loggedin
-
   },
   methods: {
     // Log in with the form's email/username and password
     async register(e: any) {
       e.preventDefault();
-      let error: any = await this.store.register(this.email, this.password);
+      let error: any = await this.store.register(this.email, this.city, this.password);
       let that = this;
       if (error != null) {
         Object.keys(error).forEach(function (key) {
