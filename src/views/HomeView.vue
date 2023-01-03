@@ -27,6 +27,7 @@ export default defineComponent({
     await this.store.checkIsAuthenticated();
     if (this.store.isAuthenticated == true) {
       await this.store.getWhoAmI();
+      router.push('/dashboard');
     }
   },
   methods: {

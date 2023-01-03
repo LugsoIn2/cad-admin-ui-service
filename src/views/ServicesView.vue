@@ -206,6 +206,12 @@ export default defineComponent({
 
     };
   },
+  async mounted() {
+    await this.store.checkIsAuthenticated();
+    if (this.store.isAuthenticated == true) {
+      await this.store.getWhoAmI();
+    }
+  },
 });
 </script>
 

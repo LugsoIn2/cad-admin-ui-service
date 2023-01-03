@@ -10,20 +10,20 @@ export const authStore = defineStore({
   state: () =>
   ({
     isAuthenticated : false,
-    username: ""
+    username: "",
+    myTenant: null
   }),
   actions: {
     // check if already authenticated by session
     async checkIsAuthenticated() {
-        let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/session/`;
-        const response: any = await axios.get(endpoint, { withCredentials: true }
-        );
+        const endpoint = `${import.meta.env.VITE_API_ENDPOINT}/session/`;
+        const response: any = await axios.get(endpoint, { withCredentials: true });
         const isAuthenticated = response.data.isAuthenticated;
         if (isAuthenticated == true) {
-          router.push('/cockpit');
           this.isAuthenticated = true;
-        } else {
-          router.push("/start");
+          const tenantEndpoint = `${import.meta.env.VITE_API_ENDPOINT}/mytenant/`;
+          const tenantResponse: any = await axios.get(tenantEndpoint, { withCredentials: true });
+          this.myTenant = tenantResponse.data == '' ? null : tenantResponse.data;
         }
     },
     // get CSRF Token from Backend and store it in cookie
@@ -45,7 +45,7 @@ export const authStore = defineStore({
         });
         if (response.status == 200) {
           this.isAuthenticated = true;
-          router.push('/cockpit');
+          router.push('/dashboard');
           return true;
         }
       } catch (e) {
@@ -77,7 +77,7 @@ export const authStore = defineStore({
         });
         if (response.status == 200 && !response.data.error) {
           this.isAuthenticated = true;
-          router.push('/cockpit');
+          router.push('/dashboard');
           return {};
         } else {
           return response.data.error;

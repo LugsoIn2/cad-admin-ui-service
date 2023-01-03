@@ -18,7 +18,7 @@ export default defineComponent({
 <template>
   <nav
     class="px-2 sm:px-4 py-2.5  w-full z-20 top-0 left-0">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
+    <div class="container flex flex-wrap items-center justify-between ">
       <a href="/" class="flex items-center">
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Was geht?</span>
       </a>
@@ -50,7 +50,7 @@ export default defineComponent({
             <li class="border-l border-r border-gray-600 px-4">
               <router-link class="font-bold menuItem-active-link" :to="{ name: 'services' }">Service Plans</router-link>
             </li>
-            <li v-if="!store.isAuthenticated" >
+            <li >
               <router-link class="font-bold menuItem-active-link" :to="{ name: 'contact' }">Contact</router-link>
             </li>
           </template>
