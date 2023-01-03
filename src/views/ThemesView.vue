@@ -6,8 +6,13 @@
       <p class="text-3xl text-gray-700 font-bold mb-5">
         Themes
       </p>
-      Coming soon
-
+      <p v-if="store.myTenant && (store.myTenant.subscription_type == 1 ||store.myTenant.subscription_type == 2) ">
+        You will be able to customize your theme in the future here.
+      </p>
+      <p v-else>
+        <p class="text-red-700">Free Subscriptions are not permitted to change themes!</p>
+        You have to purchase the Standard or Enterprise Subscription to be able to change your theming!
+      </p>
     </div>
   </div>
 </template>

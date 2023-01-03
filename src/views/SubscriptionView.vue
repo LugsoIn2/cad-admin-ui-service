@@ -1,25 +1,31 @@
 
 <template>
-    <div class="flex flex-col sm:flex-row  items-stretch">
-  <SideBarVue></SideBarVue>
-  <div class="w-auto sm:w-full mx-4 my-4 sm:mx-8 sm:my-0 bg-gray-200 rounded-xl shadow border p-8 ">
+  <div class="flex flex-col sm:flex-row  items-stretch">
+    <SideBarVue></SideBarVue>
+    <div class="w-auto sm:w-full mx-4 my-4 sm:mx-8 sm:my-0 bg-gray-200 rounded-xl shadow border p-8 ">
       <p class="text-3xl text-gray-700 font-bold mb-5">
         Subscription
       </p>
+      <p class="text-lg text-gray-700 font-bold mb-5">
+        Current subscription: {{ store.myTenantSubscription }}
+      </p>
       <label for="countries" class="block mb-2 text-sm font-medium text-gray-700">Select a subscription type</label>
-      <select id="countries"
-      v-model="selectedSubscription"
+      <select id="countries" v-model="selectedSubscription" placeholder="ha"
         class=" border border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-900 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option value="Free">Free</option>
-        <option value="Standard">Standard</option>
-        <option value="Enterprise">Enterprise</option>
+        <option value="-" disabled  hidden>Choose your subscription</option>
+        <option :disabled="store.myTenant && store.myTenant.subscription_type == '0'" value="Free"> Free</option>
+        <option  :disabled="store.myTenant && store.myTenant.subscription_type == '1'" value="Standard">Standard</option>
+        <option :disabled="store.myTenant && store.myTenant.subscription_type == '2'" value="Enterprise">Enterprise
+        </option>
       </select>
 
-      <label for="countries" class="block my-2 text-sm font-medium text-gray-700">Press here to apply your subscription type</label>
-      <button
-            class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 custom-background hover:bg-blue-700 dark:focus:ring-blue-800">
-          {{ selectedSubscription == "Free" ? "Activate Free Subscription": "Purchase "  + selectedSubscription + " subscription"}}
-          </button>
+      <label v-if="selectedSubscription != '-'" for="countries"
+        class="block my-2 text-sm font-medium text-gray-700">Press here to apply your subscription type</label>
+      <button v-if="selectedSubscription != '-'" @click="setSubscription"
+        class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 custom-background hover:bg-blue-700 dark:focus:ring-blue-800">
+        {{ selectedSubscription == "Free" ? "Activate Free Subscription" : "Purchase " + selectedSubscription + 
+        " subscription"}}
+      </button>
 
     </div>
   </div>
@@ -48,7 +54,7 @@ export default defineComponent({
   },
   data() {
     return {
-      selectedSubscription: "Free"
+      selectedSubscription: "-"
     };
   },
   async mounted() {
@@ -60,8 +66,8 @@ export default defineComponent({
     }
   },
   methods: {
-    logout() {
-      this.store.logout();
+    setSubscription() {
+      this.store.updateSubscriptionType(this.selectedSubscription, 'Konstanz');
     }
   }
 });

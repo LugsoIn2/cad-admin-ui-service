@@ -9,9 +9,15 @@ export const authStore = defineStore({
   id: 'authStore',
   state: () =>
   ({
+    isInitialized: false,
     isAuthenticated : false,
     username: "",
-    myTenant: null
+    myTenant: {
+      city: null,
+      user_id: null,
+      subscription_type: null
+    },
+    myTenantSubscription: ""
   }),
   actions: {
     // check if already authenticated by session
@@ -24,7 +30,9 @@ export const authStore = defineStore({
           const tenantEndpoint = `${import.meta.env.VITE_API_ENDPOINT}/mytenant/`;
           const tenantResponse: any = await axios.get(tenantEndpoint, { withCredentials: true });
           this.myTenant = tenantResponse.data == '' ? null : tenantResponse.data;
+          this.myTenantSubscription = this.myTenant ? this.getSubscriptionStringFromTypeNumber(this.myTenant.subscription_type) : "";
         }
+        this.isInitialized = true;
     },
     // get CSRF Token from Backend and store it in cookie
     async getCSRFToken() {
@@ -64,11 +72,11 @@ export const authStore = defineStore({
       const response: any = await axios.get(endpoint, {withCredentials: true});
       this.username = response.data.username;
     },
-    async register(email: String, password: String): Promise<Object> {
+    async register(email: String, city: String, password: String): Promise<Object> {
       try {
         let endpoint = `${import.meta.env.VITE_API_ENDPOINT}/register/`;
         const response: any = await axios.post(endpoint,
-          JSON.stringify({ username: email, password1: password, password2: password }), {
+          JSON.stringify({ username: email, city: city, password1: password, password2: password }), {
           withCredentials: true,
           headers: {
             "X-CSRFToken": cookies.get("csrftoken"),
@@ -87,5 +95,38 @@ export const authStore = defineStore({
         return {};
       }
     },
+    async updateSubscriptionType(subscriptionType: String, city: String) {
+      try {
+        const endpoint = `${import.meta.env.VITE_API_ENDPOINT}/subscription/`;
+        const response: Response = await axios.post(endpoint,
+          JSON.stringify({ subscription: subscriptionType, city: city }), {
+          withCredentials: true,
+          headers: {
+            "X-CSRFToken": cookies.get("csrftoken"),
+            'content-type': 'application/json'
+          }
+        });
+        if (response.status == 200) {
+          this.isAuthenticated = true;
+          router.push('/dashboard');
+          return true;
+        }
+      } catch (e) {
+        console.log(e);
+      }
+      return false;
+    },
+    getSubscriptionStringFromTypeNumber(subscriptionType: String) {
+      switch (subscriptionType) {
+        case "0":
+          return "Free";
+        case "1": 
+          return "Standard";
+        case "2":
+          return "Enterprise";
+        default:
+          throw new Error("Not a valid type");
+      }
+    }
   }
 });

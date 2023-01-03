@@ -6,8 +6,7 @@
       <p class="text-3xl text-gray-700 font-bold mb-5">
         Calculated Costs
       </p>
-      Coming soon
-
+      Coming soon...
     </div>
   </div>
 </template>

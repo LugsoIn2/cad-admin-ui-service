@@ -22,7 +22,7 @@ export default defineComponent({
       <a href="/" class="flex items-center">
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Was geht?</span>
       </a>
-      <div class="flex md:order-2">
+      <div v-if="store.isInitialized" class="flex md:order-2">
         <a v-if="!store.isAuthenticated" href="/login">
           <button
             class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 custom-background hover:bg-white hover:text-black dark:focus:ring-blue-800">Login</button>
@@ -40,7 +40,7 @@ export default defineComponent({
           </svg>
         </button>
       </div>
-      <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+      <div v-if="store.isInitialized" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
         <ul
           class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:border-gray-700">
           <template v-if="!store.isAuthenticated">
