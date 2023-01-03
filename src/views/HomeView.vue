@@ -24,10 +24,13 @@ export default defineComponent({
     };
   },
   async mounted() {
+    console.log("mh");
     await this.store.checkIsAuthenticated();
     if (this.store.isAuthenticated == true) {
       await this.store.getWhoAmI();
       router.push('/dashboard');
+    } else {
+      router.push('/start')
     }
   },
   methods: {

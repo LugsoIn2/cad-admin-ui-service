@@ -1,8 +1,8 @@
 
 <template>
-  <div class="flex flex-row items-stretch">
+  <div class="flex flex-col sm:flex-row  items-stretch">
   <SideBarVue></SideBarVue>
-  <div class="container mx-8 bg-gray-200 rounded-xl shadow border p-8 ">
+  <div class="w-auto sm:w-full mx-4 my-4 sm:mx-8 sm:my-0 bg-gray-200 rounded-xl shadow border p-8 ">
     <p class="text-3xl text-gray-700 font-bold mb-5">
       Dashboard
     </p>
