@@ -7,6 +7,7 @@ import ContactViewVue from '@/views/ContactView.vue'
 import SubscriptionViewVue from '@/views/SubscriptionView.vue'
 import DashboardVueVue from '@/views/DashboardView.vue'
 import ThemesViewVue from '@/views/ThemesView.vue'
+import CostsViewVue from '@/views/CostsView.vue'
 
 
 import { createRouter, createWebHistory } from 'vue-router'
@@ -58,6 +59,11 @@ const router = createRouter({
       path: '/themes',
       name: 'themes',
       component: ThemesViewVue
+    },
+    {
+      path: '/costs',
+      name: 'costs',
+      component: CostsViewVue
     },
   ]
 })
