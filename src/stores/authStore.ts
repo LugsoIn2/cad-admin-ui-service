@@ -30,7 +30,7 @@ export const authStore = defineStore({
           const tenantEndpoint = `${import.meta.env.VITE_API_ENDPOINT}/mytenant/`;
           const tenantResponse: any = await axios.get(tenantEndpoint, { withCredentials: true });
           this.myTenant = tenantResponse.data == '' ? null : tenantResponse.data;
-          this.myTenantSubscription = this.myTenant ? this.getSubscriptionStringFromTypeNumber(this.myTenant.subscription_type) : "";
+          this.myTenantSubscription = this.myTenant && this.myTenant.subscription_type ? this.getSubscriptionStringFromTypeNumber(this.myTenant.subscription_type) : "";
         }
         this.isInitialized = true;
     },
