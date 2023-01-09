@@ -18,7 +18,7 @@ export default defineComponent({
 <template>
   <nav
     class="px-2 sm:px-4 py-2.5  w-full z-20 top-0 left-0">
-    <div class="container flex flex-wrap items-center justify-between ">
+    <div class="container mx-auto px-6 flex flex-wrap items-center justify-between ">
       <a href="/" class="flex items-center">
         <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">Was geht?</span>
       </a>
