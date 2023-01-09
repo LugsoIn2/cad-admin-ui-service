@@ -20,12 +20,15 @@
       </select>
 
       <label v-if="selectedSubscription != '-'" for="countries"
-        class="block my-2 text-sm font-medium text-gray-700">Press here to apply your subscription type</label>
+        class="block my-2 text-sm font-medium text-gray-700">Submit to apply your subscription type</label>
       <button v-if="selectedSubscription != '-'" @click="setSubscription"
         class="text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 custom-background hover:bg-blue-700 dark:focus:ring-blue-800">
         {{ selectedSubscription == "Free" ? "Activate Free Subscription" : "Purchase " + selectedSubscription + 
-        " subscription"}}
+        " Subscription"}}
       </button>
+      <p v-if="selectedSubscription != '-'" class="text-sm text-gray-700 italic mb-5">
+        * It might take a while before the action takes effect!
+      </p>
 
     </div>
   </div>
