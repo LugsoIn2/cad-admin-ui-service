@@ -15,9 +15,11 @@ export const authStore = defineStore({
     myTenant: {
       city: null,
       user_id: null,
-      subscription_type: null
+      subscription_type: null,
+      theme_type: null
     },
-    myTenantSubscription: ""
+    myTenantSubscription: "",
+    myTenantTheme: ""
   }),
   actions: {
     // check if already authenticated by session
@@ -31,6 +33,7 @@ export const authStore = defineStore({
           const tenantResponse: any = await axios.get(tenantEndpoint, { withCredentials: true });
           this.myTenant = tenantResponse.data == '' ? null : tenantResponse.data;
           this.myTenantSubscription = this.myTenant && this.myTenant.subscription_type ? this.getSubscriptionStringFromTypeNumber(this.myTenant.subscription_type) : "";
+          this.myTenantTheme = this.myTenant && this.myTenant.theme_type ? this.getThemeStringFromTypeNumber(this.myTenant.theme_type) : "";
         }
         this.isInitialized = true;
     },
@@ -95,11 +98,11 @@ export const authStore = defineStore({
         return {};
       }
     },
-    async updateSubscriptionType(subscriptionType: String, city: String) {
+    async updateSubscriptionType(subscriptionType: String) {
       try {
         const endpoint = `${import.meta.env.VITE_API_ENDPOINT}/subscription/`;
         const response: Response = await axios.post(endpoint,
-          JSON.stringify({ subscription: subscriptionType, city: city }), {
+          JSON.stringify({ subscription: subscriptionType, city: this.myTenant.city }), {
           withCredentials: true,
           headers: {
             "X-CSRFToken": cookies.get("csrftoken"),
@@ -116,6 +119,27 @@ export const authStore = defineStore({
       }
       return false;
     },
+    async updateThemeType(themeType: number) {
+      try {
+        const endpoint = `${import.meta.env.VITE_API_ENDPOINT}/theme/`;
+        const response: Response = await axios.post(endpoint,
+          JSON.stringify({ theme: themeType, city: this.myTenant.city }), {
+          withCredentials: true,
+          headers: {
+            "X-CSRFToken": cookies.get("csrftoken"),
+            'content-type': 'application/json'
+          }
+        });
+        if (response.status == 200) {
+          this.isAuthenticated = true;
+          router.go(0); 
+          return true;
+        }
+      } catch (e) {
+        console.log(e);
+      }
+      return false;
+    },
     getSubscriptionStringFromTypeNumber(subscriptionType: String) {
       switch (subscriptionType) {
         case "0":
@@ -124,6 +148,18 @@ export const authStore = defineStore({
           return "Standard";
         case "2":
           return "Enterprise";
+        default:
+          throw new Error("Not a valid type");
+      }
+    },
+    getThemeStringFromTypeNumber(themeType: String) {
+      switch (themeType) {
+        case "0":
+          return "Light Theme";
+        case "1": 
+          return "Dark Theme";
+        case "2":
+          return "Colorful";
         default:
           throw new Error("Not a valid type");
       }
