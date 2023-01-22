@@ -23,13 +23,15 @@
         <p class="text-indigo-200 mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
       </div>
       <div class="w-full md:w-1/2 px-4">
-        <img class="rounded-2xl" src="https://www.cch.de/fileadmin/_processed_/1/b/csm_cch_header_concert3_f3ce086a56.jpg" />
+        <img class="rounded-2xl" src="https://assets-global.website-files.com/61f29c609f84a86e418fbcfb/630e7573a6c82d2aa382fd87_630ccd11b949e41fce06a0dc_blog2_main.webp" />
+
       </div>
     </div>
 
     <div class="flex items-center flex-wrap mb-20">
       <div class="w-full md:w-1/2 px-4">
-        <img class="rounded-2xl" src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/party-header-concert-live-music-event-banner-design-template-1f1368e5c872e323e3c7a44bb7c985ec_screen.jpg?ts=1600714888" />
+        <img class="rounded-2xl" src="https://www.entertainmentbusiness.nl/wp-content/uploads/2021/03/EB-Header-1-800x450.jpg" />
+
       </div>
       <div class="w-full md:w-1/2 px-4">
         <h4 class="text-3xl text-indigo-200 font-bold mb-3">Automated Scraping</h4>
@@ -43,7 +45,7 @@
         <p class="text-indigo-200 mb-8">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam.</p>
       </div>
       <div class="w-full md:w-1/2 px-4">
-        <img class="rounded-2xl" src="https://www.cch.de/fileadmin/_processed_/1/b/csm_cch_header_concert3_f3ce086a56.jpg" />
+        <img class="rounded-2xl" src="https://thoth.pickvisa.com/wp-content/uploads/2021/12/433561cc80dc4c38b2ab51a3901b88b3.jpg" />
       </div>
     </div>
   </section>
