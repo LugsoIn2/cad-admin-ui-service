@@ -111,7 +111,6 @@ export const authStore = defineStore({
         });
         if (response.status == 200) {
           this.isAuthenticated = true;
-          router.push('/dashboard');
           return true;
         }
       } catch (e) {
