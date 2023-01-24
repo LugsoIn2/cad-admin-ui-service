@@ -111,6 +111,7 @@ export const authStore = defineStore({
         });
         if (response.status == 200) {
           this.isAuthenticated = true;
+          this.myTenantSubscription = subscriptionType.toString();
           return true;
         }
       } catch (e) {
