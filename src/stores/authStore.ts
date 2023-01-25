@@ -16,7 +16,8 @@ export const authStore = defineStore({
       city: null,
       user_id: null,
       subscription_type: null,
-      theme_type: null
+      theme_type: null,
+      customer_nr: null
     },
     myTenantSubscription: "",
     myTenantTheme: ""

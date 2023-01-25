@@ -1,27 +1,44 @@
 
 <template>
   <div class="flex flex-col sm:flex-row  items-stretch">
-  <SideBarVue></SideBarVue>
-  <div class="w-auto sm:w-full mx-4 my-4 sm:mx-8 sm:my-0 bg-gray-200 rounded-xl shadow border p-8 ">
-    <p class="text-3xl text-gray-700 font-bold mb-5">
-      Dashboard
-    </p>
-    <div v-if="!isLoading">
-      <p class="text-gray-700 font-bold mb-5">
-      {{ store.username }}
-    </p>
-    <p v-if="store.myTenant" class="text-gray-700 font-bold mb-5">
-      City: {{ store.myTenant.city }}
-    </p>
-    <p v-else class="text-red-700 font-bold mb-5">
-      - No Subscription yet - 
-    </p>
+    <SideBarVue></SideBarVue>
+    <div class="w-auto sm:w-full mx-4 my-4 sm:mx-8 sm:my-0 bg-gray-200 rounded-xl shadow border p-8 ">
+      <p class="text-3xl text-gray-700 font-bold mb-7">
+        Dashboard
+      </p>
 
+      <table v-if="!isLoading" >
+        <tr>
+          <td class="text-gray-700 font-bold mb-5 mr-5">
+            Customer Nr
+          </td>
+          <td class="pl-6">
+            {{ store.myTenant.customer_nr }}
+          </td>
+        </tr>
+        <tr class="gap-4">
+          <td class="text-gray-700 font-bold mb-5">
+            Email
+          </td>
+          <td class="pl-6">
+            <p>
+              {{ store.username }}
+            </p>
+          </td>
+        </tr>
+        
+        <tr>
+          <td class="text-gray-700 font-bold mb-5 mr-5">
+            City
+          </td>
+          <td class="pl-6">
+            {{ store.myTenant.city }}
+          </td>
+        </tr>
+      </table>
     </div>
+  </div>
 
-  </div>
-  </div>
-  
 </template>
 
 <script lang="ts">
@@ -37,7 +54,7 @@ export default defineComponent({
     EventList,
     Datepicker,
     SideBarVue
-},
+  },
   setup() {
     const store = authStore();
     return { store };

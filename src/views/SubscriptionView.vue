@@ -9,6 +9,12 @@
       <p class="text-lg text-gray-700 font-bold mb-5">
         Current subscription: {{ store.myTenantSubscription }}
       </p>
+      <p v-if="store.myTenantSubscription=='Enterprise'" class="text-lg text-gray-700 font-bold mb-5">
+        Dedicated URL: 
+        <a class="text-blue-600" target="_blank" :href="'http://' + store.myTenant.customer_nr + '-userservice.aws.netpy.de/'">
+          http://{{store.myTenant.customer_nr}}-userservice.aws.netpy.de/
+        </a>
+      </p>
 
       <div v-if="!newSubscription">
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-700">Select a subscription type</label>
