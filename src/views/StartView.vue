@@ -2,10 +2,10 @@
 <template>
   <section class="container mx-auto px-6 p-10 h-full flex flex-col items-center">
     <h1 class="text-5xl font-bold mb-5 text-white">
-      Was geht ab?
+      Was geht in your city?
     </h1>
     <h3 class="text-2xl mb-8 text-indigo-200">
-      Create a was geht page for your city.
+      Create a was geht page in 5 minutes.
     </h3>
     <a href="/services">
       <button

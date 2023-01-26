@@ -10,7 +10,7 @@ import { authStore } from '@/stores/authStore';
 
   <Navbar>
   </Navbar>
-  <main class="w-full ">
+  <main class="w-full max-w-screen-2xl mr-auto ml-auto">
     <RouterView />
   </main>
 </template>

@@ -27,7 +27,7 @@
                     clip-rule="evenodd" />
                 </svg>
 
-                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events. Runs every day.</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events. <br>Runs every day.</span>
               </div>
             </div>
             
@@ -43,7 +43,7 @@
           class="px-6 py-4 transition-colors duration-200 transform rounded-lg bg-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700 flex flex-col justify-between">
           <div>
             <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Standard (most popular)</p>
-            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$9 <span
+            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">€ 69,99 <span
                 class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
             <p class="mt-4 text-gray-500 dark:text-gray-300">Upgrade to standard and gain access to our custom scrapers to fetch events from your desired websites.</p>
 
@@ -56,7 +56,7 @@
                     clip-rule="evenodd" />
                 </svg>
 
-                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events. Runs every hour.</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events. <br>Runs every hour.</span>
               </div>
             </div>
             <div class="mt-8 space-y-8">
@@ -68,7 +68,7 @@
                     clip-rule="evenodd" />
                 </svg>
 
-                <span class="mx-4 text-gray-700 dark:text-gray-300">1 Custom Scraper included.</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">5 Custom Scrapers included.</span>
               </div>
             </div>
             
@@ -85,7 +85,7 @@
           class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 flex flex-col justify-between">
           <div>
             <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Enterprise</p>
-            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">$49 <span
+            <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">€ 139,99 <span
                 class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
             <p class="mt-4 text-gray-500 dark:text-gray-300">Experience the ultimate in performance and security with our enterprise subscription.  </p>
 
@@ -98,7 +98,7 @@
                     clip-rule="evenodd" />
                 </svg>
 
-                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events. Runs every 15 minutes.</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Automated scraping from google events.<br> Runs every 15 minutes.</span>
               </div>
             </div>
             <div class="mt-8 space-y-8">
@@ -110,7 +110,7 @@
                     clip-rule="evenodd" />
                 </svg>
 
-                <span class="mx-4 text-gray-700 dark:text-gray-300">5 Custom Scrapers included.</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">10 Custom Scrapers included.</span>
               </div>
             </div>
             <div class="mt-8 space-y-8">
@@ -121,7 +121,7 @@
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd" />
                 </svg>
-                <span class="mx-4 text-gray-700 dark:text-gray-300">Dedicated isolated resources</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Dedicated isolated ressources</span>
 
               </div>
             </div>
@@ -133,7 +133,7 @@
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                     clip-rule="evenodd" />
                 </svg>
-                <span class="mx-4 text-gray-700 dark:text-gray-300">Customizable theming</span>
+                <span class="mx-4 text-gray-700 dark:text-gray-300">Customizable Theming</span>
 
               </div>
             </div>
